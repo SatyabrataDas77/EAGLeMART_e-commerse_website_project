@@ -1,0 +1,119 @@
+@import "../../css-config/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poor+Story&family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poor+Story&family=Protest+Revolution&display=swap');
+
+.main-header {
+    width: 100%;
+    padding: 0 10px;
+    background-color: #dedede;
+    color: #000000;
+    border-bottom: 1px solid rgba(86, 143, 207, 0.1);
+    z-index: 99;
+
+    @include md {
+        padding: 0 20px;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @include md {
+            height: 65px;
+        }
+
+        .left {
+            list-style-type: none;
+            display: none;
+            gap: 25px;
+
+            @include md {
+                display: flex;
+            }
+
+            li {
+                font-family: "Dancing Script", cursive;
+                font-size: 18px;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+
+            }
+        }
+
+        .center {
+            font-family: "Protest Revolution", sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+
+            @include md {
+                font-size: 34px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            @include md {
+                gap: 30px;
+            }
+
+            svg {
+                font-size: 25px;
+                cursor: pointer;
+
+                @include md {
+                    font-size: 30px;
+                }
+            }
+
+            .card-icon {
+                position: relative;
+
+                span {
+                    min-width: 20px;
+                    text-align: center;
+                    background-color: black;
+                    padding: 2.5px;
+                    position: absolute;
+                    top: -5px;
+                    right: -12px;
+                    font-size: 12px;
+                    line-height: 1;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    &.sticky-header {
+        position: sticky;
+        top: 0;
+        animation: stickyHeader 0.3s ease forwards;
+        -webkit-animation: stickyHeader 0.3s ease forwards;
+    }
+}
+
+@keyframes stickyHeader {
+    0% {
+        transform: translateY(-65px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
